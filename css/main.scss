@@ -3,16 +3,21 @@
 ---
 @charset "utf-8";
 
-
-
-// Our variables
 $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif: "Playfair Display", Georgia, Garamond, serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
 $spacing-unit:     30px;
+
+$color-baby-blue:  #95DAF7;
+$color-pink:       #F491C0;
+$color-gray:       #28262C;
+$color-yellow:     #FCD000;
+$color-cornflower: #B2D7FF;
+$color-dark-gray:  #1A191B;
 
 $text-color:       #111;
 $background-color: #fdfdfd;
@@ -28,6 +33,40 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
+// Grid breakpoints
+//
+// Define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$breakpoints: (
+  xs: 0px,
+  sm: 544px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+$container-widths: (
+  xs: 480px,
+  sm: 600px,
+  md: 768px,
+  lg: 850px,
+  xl: 850px
+);
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:               12;
+$grid-gutter-width:          12px;
+$grid-half-gutter-width:     $grid-gutter-width / 2;
+$gutter-compensation:        -1 * $grid-half-gutter-width;
+
 
 
 // Use media queries like this:
@@ -38,16 +77,22 @@ $on-laptop:        800px;
 //     }
 // }
 @mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+  @media screen and (max-width: $device) {
+    @content;
+  }
 }
 
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "layout",
-        "syntax-highlighting"
+  "normalizer",
+  "base",
+  "flexgrid",
+  "container",
+  "layout",
+  "home",
+  "syntax-highlighting",
+  "type",
+  "tabs"
 ;

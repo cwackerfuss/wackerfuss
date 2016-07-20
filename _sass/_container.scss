@@ -1,0 +1,26 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: $grid-half-gutter-width;
+  padding-left: $grid-half-gutter-width;
+}
+
+.container-fluid {
+  max-width: 100%;
+}
+
+@each $key, $breakpoint in $breakpoints {
+
+  @if map-has-key($container-widths, $key) {
+
+    @media (min-width: $breakpoint) {
+      .container {
+        max-width: map-get($container-widths, $key);
+      }
+    }
+
+  } @else {
+    @warn "Unknown `#{$key}` in $container-widths.";
+  }
+
+}

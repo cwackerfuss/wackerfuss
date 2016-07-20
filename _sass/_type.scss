@@ -1,0 +1,44 @@
+.text-label {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  margin: 0 0;
+  padding: 0 0;
+  font-weight: 300;
+  &--pink,
+  &--pink:visited {
+    color: $color-pink;
+  }
+  &--white,
+  &--white:visited {
+    color: white;
+  }
+  &--gray,
+  &--gray:visited {
+    color: $color-dark-gray;
+  }
+}
+.site-copy {
+  font-size: 1rem;
+  line-height: 28px;
+  font-weight: 300;
+  &--white {
+    color: white;
+  }
+  &--gray {
+    color: $color-gray;
+  }
+}
+
+.body-title {
+  font-family: $font-family-serif;
+  color: $color-baby-blue;
+  font-size: 1.5rem;
+  font-weight: 400;
+  &--white {
+    color: white;
+  }
+  &--gray {
+    color: $color-gray;
+  }
+}

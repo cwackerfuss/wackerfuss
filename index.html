@@ -2,22 +2,88 @@
 layout: default
 ---
 
-<div class="home">
+<div class="intro-banner">
+  <div class="intro-banner-overlay"></div>
 
-  <h1 class="page-heading">Posts</h1>
+  <div class="container">
+    <div class="row row-gutterless intro-banner-row">
+      <div class="col-md-6">
+        <div class="intro-banner-content">
+          <h2 class="body-title">Hello, I'm Chase.</h2>
+          <p class="site-copy site-copy--white">
+            I design and build wondrous web apps and sites for people like you, and I love to learn new stuff.
+           </p>
+          <p class="site-copy site-copy--white">
+            Whether you want to collaborate on a project, hire me, or just grab coffee, give me a buzz.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="intro-banner-image">
+          <img src="{{ site.baseurl }}/assets/images/chase.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+<div class="skills-section">
+  <div class="skills-section-angle"></div>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+  <div class="container">
+    <div class="row skills-section-row">
+      <div class="x-mark"></div>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+      <div id="tabs" class="c-tabs no-js">
+        <div class="c-tabs-nav skills-buttons">
+          <button class="skills-button skills-button--pink c-tabs-nav__link is-active">
+            Development
+          </button>
+          <button class="skills-button skills-button--gray c-tabs-nav__link">
+            Leadership
+          </button>
+          <button class="skills-button skills-button--baby-blue c-tabs-nav__link">
+            Design
+          </button>
+        </div>
+        <div class="c-tab is-active">
+          <div class="c-tab__content">
+            <h2 class="body-title body-title--white">I identify most strongly as a developer.</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <p class="site-copy site-copy--gray">I have four years of experience developing websites and web apps with tools like Wordpress, Angular, React, and more. I always stay fresh on the latest technologies and have a passion for learning new things.</p>
+              </div>
+              <div class="col-md-8">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="c-tab">
+          <div class="c-tab__content">
+            <h2 class="body-title body-title--white">Leadership stuff.</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <p class="site-copy site-copy--gray">I have four years of experience developing websites and web apps with tools like Wordpress, Angular, React, and more. I always stay fresh on the latest technologies and have a passion for learning new things.</p>
+              </div>
+              <div class="col-md-8">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="c-tab">
+          <div class="c-tab__content">
+            <h2 class="body-title body-title--white">Designer stuff.</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <p class="site-copy site-copy--gray">I have four years of experience developing websites and web apps with tools like Wordpress, Angular, React, and more. I always stay fresh on the latest technologies and have a passion for learning new things.</p>
+              </div>
+              <div class="col-md-8">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+    </div>
+  </div>
 </div>
