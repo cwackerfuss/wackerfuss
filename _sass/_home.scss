@@ -1,10 +1,19 @@
 .intro-banner {
   background: url('../assets/images/speckle.png') repeat repeat;
   background-size: 190px;
-  height: 512px;
+  height: auto;
   width: 100%;
   display: block;
   position: relative;
+  @include media-query(map-get($breakpoints, sm)) {
+    height: 450px;
+  }
+  @include media-query(map-get($breakpoints, md)) {
+    height: 477px;
+  }
+  @include media-query(map-get($breakpoints, lg)) {
+    height: 512px;
+  }
   .intro-banner-overlay {
     position: absolute;
     z-index: -1;
@@ -20,20 +29,46 @@
   }
   .intro-banner-content {
     background-color: transparentize($color-gray, 0.2);
-    height: 520px;
-    padding: 140px 40px 0 30px;
+    height: auto;
+    padding: 40px 40px 40px 30px;
     display: block;
+    @include media-query(map-get($breakpoints, sm)) {
+      height: 450px;
+    }
+    @include media-query(map-get($breakpoints, md)) {
+      padding-top: 80px;
+      height: 520px;
+    }
+    @include media-query(map-get($breakpoints, lg)) {
+      padding-top: 140px;
+    }
   }
   .intro-banner-image {
-    margin-top: 100px;
-    height: 520px;
+    margin-top: 0px;
+    height: auto;
     position: relative;
     z-index: 1;
     display: block;
     img {
-      border-top-right-radius: 3px;
+      border-top-right-radius: 0;
       width: 100%;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 5px 10px 0px rgba(126, 186, 212, 0.3);
     }
+    @include media-query(map-get($breakpoints, sm)) {
+      margin-top: 94px;
+    }
+    @include media-query(map-get($breakpoints, md)) {
+      height: 520px;
+      margin-top: 100px;
+      img {
+        margin: 0 0;
+        width: 100%;
+        border-top-right-radius: 3px;
+      }
+    }
+
   }
   .intro-banner-row {
     margin-left: -30px;
@@ -42,12 +77,13 @@
 }
 
 .skills-section {
-  height: 600px;
-  padding-top: 50px;
+  height: auto;
+  padding: 50px 0 90px;
   background-color: $color-baby-blue;
   width: 100%;
   position: relative;
   display: block;
+  overflow: hidden;
   .skills-section-angle {
     width: calc(100% + 50px);
     left: -25px;
@@ -65,11 +101,11 @@
       width: 220px;
       border: 0;
       color: white;
-      margin: 0 15px;
+      margin: 0 5px;
       padding-top: 10px;
       padding-bottom: 10px;
       text-transform: uppercase;
-      font-size: 0.75rem;
+      font-size: 0.5rem;
       letter-spacing: 3px;
       font-weight: 300;
       cursor: pointer;
@@ -101,6 +137,10 @@
           background-color: #65B4D5;
         }
       }
+      @include media-query(map-get($breakpoints, md)) {
+        font-size: 0.75rem;
+        margin: 0 15px;
+      }
     }
   }
 }
@@ -129,5 +169,121 @@
   }
   &:after {
     transform: rotate(-45deg);
+  }
+}
+
+.personal-section {
+  background-color: $color-gray;
+  padding: 90px 0;
+  width: 100%;
+  display: block;
+  .personal-photo {
+    margin-bottom: 35px;
+  }
+}
+
+.contact-section {
+  background-color: $color-dark-gray;
+  position: relative;
+}
+
+.contact-container {
+  position: relative;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+.contact-icon {
+  position: absolute;
+  border-radius: 50%;
+  top: -60px;
+  height: 120px;
+  width: 120px;
+  background-color: $color-dark-gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+}
+
+.contact-title {
+  font-family: "Andale Mono", "Courier", "Lucida Console", "Source Code Pro";
+  color: white;
+  font-size: 1rem;
+}
+.contact-form {
+  font-family: "Andale Mono", "Courier", "Lucida Console", "Source Code Pro";
+  color: $color-yellow;
+  .form-control {
+    display: flex;
+    margin-bottom: 12px;
+    align-items: center;
+    .form-label {
+      padding-right: 8px;
+    }
+    input,
+    textarea {
+      background-color: transparent;
+      border: none;
+      padding: 10px 2px;
+      color: white;
+      border-bottom: 1px solid $color-dark-gray;
+      flex-grow: 1;
+      transition: all 0.3s ease-in-out;
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid $color-yellow;
+      }
+    }
+    &--textarea {
+      align-items: flex-start;
+      .form-label {
+        padding-top: 8px;
+      }
+    }
+  }
+  .form-submit {
+    background-color: transparent;
+    color: $color-yellow;
+    padding: 0 0;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover,
+    &:focus {
+      outline: none;
+      color: white;
+    }
+  }
+}
+
+.bargraph {
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  color: $color-gray;
+  letter-spacing: 2px;
+  &-label {
+    display: block;
+  }
+  &-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    .meter {
+      flex-basis: 90%;
+      height: 8px;
+      margin-right: 8px;
+      background-color: rgba(101, 180, 213, 0.75);
+    }
+    .inner-meter {
+      height: 8px;
+      background-color: $color-pink;
+      display: block;
+    }
+    .percent {
+      flex-basis: 10%;
+    }
   }
 }

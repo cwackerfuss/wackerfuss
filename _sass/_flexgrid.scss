@@ -20,6 +20,7 @@
   min-height: 1px;
   padding-left: $grid-half-gutter-width;
   padding-right: $grid-half-gutter-width;
+  box-sizing: border-box;
 }
 
 @mixin make-grid($bp, $grid-columns: 12) {

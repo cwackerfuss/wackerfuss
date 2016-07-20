@@ -77,7 +77,7 @@ $gutter-compensation:        -1 * $grid-half-gutter-width;
 //     }
 // }
 @mixin media-query($device) {
-  @media screen and (max-width: $device) {
+  @media screen and (min-width: $device) {
     @content;
   }
 }
@@ -92,7 +92,6 @@ $gutter-compensation:        -1 * $grid-half-gutter-width;
   "container",
   "layout",
   "home",
-  "syntax-highlighting",
   "type",
   "tabs"
 ;
