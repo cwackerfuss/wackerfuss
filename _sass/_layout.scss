@@ -82,8 +82,13 @@
 a.site-title {
   display: block;
   opacity: 0;
-  animation: fadeInUp 1s linear 0.35s forwards;
-  -webkit-animation: fadeInUp 1s linear 0.35s forwards;
+  animation: fadeInUp 1s linear 0.35s;
+  -webkit-animation: fadeInUp 1s linear 0.35s;
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  -o-animation-fill-mode:forwards;
+  -ms-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
   &:hover,
   &:visited {
     text-decoration: none;
