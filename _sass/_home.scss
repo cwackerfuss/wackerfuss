@@ -76,6 +76,51 @@
   }
 }
 
+.c-tabs {
+  /**/
+}
+.c-tabs-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/**
+ * Tab
+ */
+.c-tab {
+  display: none;
+}
+
+.c-tab.is-active {
+  display: block;
+}
+
+.c-tab__content {
+  padding: 40px 0px 0;
+
+  @include media-query(map-get($breakpoints, md)) {
+    padding: 100px 0px 0;
+  }
+
+}
+
+/**
+ * Tabs no-js fallback
+ */
+.c-tabs.no-js .c-tabs-nav {
+  display: none;
+}
+
+.c-tabs.no-js .c-tab {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.c-tabs.no-js .c-tab:last-child {
+  margin-bottom: 0;
+}
+
 .skills-section {
   height: auto;
   padding: 50px 0 90px;
@@ -84,6 +129,7 @@
   position: relative;
   display: block;
   .skills-section-angle {
+    display: none;
     width: calc(100% + 50px);
     left: -25px;
     height: 50px;
@@ -91,16 +137,24 @@
     position: absolute;
     top: -25px;
     background-color: $color-baby-blue;
+    @include media-query(map-get($breakpoints, md)) {
+      display: block;
+    }
   }
   .c-tabs {
     width: 100%;
     margin-top: -100px;
     z-index: 3;
+    .skills-buttons {
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      justify-content: space-between;
+    }
     .skills-button {
       width: 220px;
       border: 0;
       color: white;
-      margin: 0 5px;
       padding-top: 10px;
       padding-bottom: 10px;
       text-transform: uppercase;
@@ -109,6 +163,11 @@
       font-weight: 300;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
+      &.is-active {
+        .svg-tabs-line {
+          display: block;
+        }
+      }
       &:focus {
         outline: none;
       }
@@ -138,7 +197,6 @@
       }
       @include media-query(map-get($breakpoints, md)) {
         font-size: 0.75rem;
-        margin: 0 15px;
       }
     }
   }
@@ -189,7 +247,7 @@
 .contact-container {
   position: relative;
   padding-top: 90px;
-  padding-bottom: 90px;
+  padding-bottom: 200px;
 }
 .contact-icon {
   position: absolute;

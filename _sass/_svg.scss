@@ -1,0 +1,51 @@
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.svg-tabs-line {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+
+  @include media-query(map-get($breakpoints, md)) {
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  polyline {
+    fill: none;
+    stroke-width: 1;
+    stroke-linejoin: round;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+  #developer-line {
+    stroke: $color-pink;
+    animation: drawLine 1.5s linear forwards;
+    -webkit-animation: drawLine 1.75s linear forwards;
+  }
+  #leader-line {
+    stroke: $color-gray;
+    animation: drawLine 1s linear forwards;
+    -webkit-animation: drawLine 1s linear forwards;
+  }
+  #designer-line {
+    stroke: #65B4D5;
+    animation: drawLine 0.65s linear forwards;
+    -webkit-animation: drawLine 0.65s linear forwards;
+  }
+}

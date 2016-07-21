@@ -87,11 +87,10 @@ $gutter-compensation:        -1 * $grid-half-gutter-width;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
   "normalizer",
-  "base",
   "flexgrid",
   "container",
   "layout",
   "home",
   "type",
-  "tabs"
+  "svg"
 ;

@@ -1,3 +1,73 @@
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes drawLogo {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes drawLogo {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes rotateLogo {
+  0% {
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+  }
+}
+@-webkit-keyframes rotateLogo {
+  0% {
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+  }
+}
+.site-logo {
+  -webkit-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  animation: rotateLogo 0.45s linear 1.05s forwards;
+  -webkit-animation: rotateLogo 0.45s linear 1.05s forwards;
+}
+
+#logo-svg-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLogo 5s linear 1.5s forwards;
+  -webkit-animation: drawLogo 5s linear 1.5s forwards;
+}
 
 /**
 * Site header
@@ -10,6 +80,10 @@
 }
 
 a.site-title {
+  display: block;
+  opacity: 0;
+  animation: fadeInUp 1s linear 0.35s forwards;
+  -webkit-animation: fadeInUp 1s linear 0.35s forwards;
   &:hover,
   &:visited {
     text-decoration: none;
