@@ -13,6 +13,7 @@ $base-line-height: 1.5;
 $spacing-unit:     30px;
 
 $color-baby-blue:  #95DAF7;
+$color-link-blue:  #00b3ff;
 $color-pink:       #F491C0;
 $color-gray:       #28262C;
 $color-yellow:     #FCD000;
@@ -91,6 +92,7 @@ $gutter-compensation:        -1 * $grid-half-gutter-width;
   "container",
   "layout",
   "home",
+  "resume",
   "type",
   "svg"
 ;

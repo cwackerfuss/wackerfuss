@@ -1,0 +1,59 @@
+.resume-content {
+  padding: 30px 40px 100px 30px;
+  display: block;
+  @include media-query(map-get($breakpoints, lg)) {
+    padding-top: 30px;
+  }
+}
+
+.resume-header {
+  .site-logo {
+    padding-bottom: 20px;
+  }
+}
+
+.resume-section {
+  padding-top: 50px;
+  a {
+    color: $color-link-blue;
+    text-decoration: underline;
+  }
+}
+
+.resume-title {
+  font-family: $font-family-serif;
+  color: $color-baby-blue;
+  font-size: 2rem;
+  font-weight: 700;
+  padding-bottom: 15px;
+  border-bottom: 1px solid $color-baby-blue;
+  &--white {
+    color: white;
+  }
+  &--gray {
+    color: $color-gray;
+  }
+}
+
+.resume-item {
+  padding: 0 20px 0 0;
+  &__title {
+    font-family: $font-family-serif;
+  }
+  &__link {
+
+  }
+}
+
+.resume-about {
+  padding-top: 20px;
+  &__img {
+    img {
+      text-align: center;
+      width: 100%;
+    }
+  }
+  &__description {
+    padding-left: 20px;
+  }
+}
