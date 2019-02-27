@@ -41,8 +41,15 @@
     font-family: $font-family-serif;
   }
   &__link {
-
   }
+}
+
+.barney {
+  display: inline-block;
+  width: 33px;
+  transform: translateY(13px);
+  border-radius: 50%;
+  margin-top: -25px;
 }
 
 .resume-about {
@@ -51,6 +58,7 @@
     img {
       text-align: center;
       width: 100%;
+      padding-top: 20px;
     }
   }
   &__description {
